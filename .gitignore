@@ -1,3 +1,9 @@
+data/
+images_l.pkl
+images_test.pkl
+images_ul.pkl
+labels_l.pkl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
