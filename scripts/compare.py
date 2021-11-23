@@ -9,7 +9,6 @@ PATH_TO_CSV_2 = "../new_nets/new_new_final.csv"
 NEW_CSV = "../output.csv" # new path to test
 
 df = pd.read_csv(PATH_TO_CSV_1)
-
 df2 = pd.read_csv(NEW_CSV)
 
 newDf = pd.DataFrame(df["Category"] == df2["Category"])

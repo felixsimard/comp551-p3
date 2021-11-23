@@ -14,17 +14,20 @@ def main():
     csv file with predictions corresponding to the max vote that all models have said.
     """
 
-    OUTPUT_CSV_PATH = "../ouput.csv"
+    OUTPUT_CSV_PATH = "./ouput.csv"
 
     # t1 = pd.read_csv(os.path.join(test_folder, "best_test.csv"))
     # t2 = pd.read_csv(os.path.join(test_folder, "k.csv"))
-    b1 = pd.read_csv(os.path.join(test_folder, "bag_1_test.csv"))
-    b2 = pd.read_csv(os.path.join(test_folder, "bag_2_test.csv"))
-    b3 = pd.read_csv(os.path.join(test_folder, "bag_3_test.csv"))
-    b4 = pd.read_csv(os.path.join(test_folder, "bag_4_test.csv"))
-    b5 = pd.read_csv(os.path.join(test_folder, "bag_5_test.csv"))
+    b1 = pd.read_csv("../bags/bag_1_test.csv")
+    b2 = pd.read_csv("../bags/bag_2_test.csv")
+    # b3 = pd.read_csv(os.path.join(test_folder, "bag_3_test.csv"))
+    # b4 = pd.read_csv(os.path.join(test_folder, "bag_4_test.csv"))
+    # b5 = pd.read_csv(os.path.join(test_folder, "bag_5_test.csv"))
+    b6 = pd.read_csv("../bags/felix_l_ul_trained.csv")
+    b7 = pd.read_csv("../BEST_MODELS/bags.csv")
+    b8 = pd.read_csv("../BEST_MODELS/final.csv")
 
-    models = [b1, b2, b3, b4, b5]
+    models = [b1, b2, b6, b7, b8]
 
     final_df = pd.DataFrame(columns=["# Id", "Category"])
 
@@ -33,7 +36,7 @@ def main():
     for index, row in b1.iterrows():
         guesses = {}
         for model in models:
-            guess = string_to_label(model.iloc[index].Category)
+            guess = list_to_label(model.iloc[index].Category)
             if guess in guesses.keys():
                 guesses[guess] += 1
             else:
