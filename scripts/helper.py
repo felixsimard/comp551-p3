@@ -1,5 +1,9 @@
 import string
 
+"""
+This class contains 2 helper functions that are used in different scripts in this project.
+
+"""
 
 alpha_to_num_dict = dict(enumerate(string.ascii_lowercase))
 num_to_alpha_dict = dict(zip(string.ascii_lowercase, range(0,26)))

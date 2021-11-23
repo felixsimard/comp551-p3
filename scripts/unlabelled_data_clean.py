@@ -3,11 +3,15 @@ import pickle
 import numpy as np
 
 """
-This script will convert the predictions that are not False made on the unlabelled dataset
-to 2 pickle files containing numpy arrays.
+Assuming you have a CSV file containing labels for the unlabelled set.
+Some of the labels will be false and this corresponds to entries where all 5 bag models disagree.
+You have to change the bagging.py script to accomplish this outcome, since the default choice is the
+simply take the prediction with the highest "vote".
 
-Make sure that ./unlabelled.csv contains the aggregated unlabelled dataset labels. (Some will have values
-of False - those correspond to the images that the 5 bag models did not agree on - )
+Assuming we have this CSV:
+This script will convert the predictions that are not False made on the unlabelled dataset
+to 2 pickle files containing numpy arrays. So it will only keep the entries of the unlabelled set where all
+5 models agree.
 
 We must make sure the indices of the images and labels match.
 """
